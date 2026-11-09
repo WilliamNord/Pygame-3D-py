@@ -76,8 +76,8 @@ points = [
     [-0.5, -0.5, -0.5],
     [ 0.5, -0.5, -0.5],
     
-    [0, 0.5, 0], 
-    [0, 1, 0]
+    [0, 0.5, 0], #nedre_stilk
+    [0, 1, 0] #øvre_stilk
 ]
 
 #noen av linjene tegnes to ganger som 0 til 1, 0 til 3 osv.
@@ -106,6 +106,8 @@ while running == True:
             running = False
             pygame.quit()
             sys.exit()
+    
+    pygame.draw.polygon(screen, (0,0,0), [(0,0), (1,0), (0,1), (1,1)])
             
     
     for x, y, z in points:
@@ -117,7 +119,7 @@ while running == True:
     for face in faces:
         for i in range(len(face)):
             a = points[face[i]]
-            b = points[face[(i + 1) % len(face) ]]
+            b = points[face[(i + 1) % len(face)]]
             draw_line(
                 p1 = (screen_coords(*project(*rotate_XZ(a[0], a[1], a[2], vinkel)))),
                 p2 = (screen_coords(*project(*rotate_XZ(b[0], b[1], b[2], vinkel))))

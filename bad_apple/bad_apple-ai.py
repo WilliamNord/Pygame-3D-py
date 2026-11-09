@@ -18,10 +18,10 @@ import numpy as np
 import pygame
 
 # ---------- Innstillinger ----------
-VIDEO = "bad_apple.mp4"
-LYD = "bad_apple.ogg"        # valgfri, spilles bare hvis filen finnes
-GRID_W = 32                  # antall epler bortover (4:3 som videoen)
-GRID_H = 24                  # antall epler nedover
+VIDEO = "bad_apple/bad_apple.mp4"
+LYD = "bad_apple/bad_apple.ogg"        # valgfri, spilles bare hvis filen finnes
+GRID_W = 32*2                  # antall epler bortover (4:3 som videoen)
+GRID_H = 24*2                  # antall epler nedover
 INVERT = False               # True = epler der videoen er hvit i stedet for svart
 TERSKEL = 128                # lysstyrke (0-255) som skiller svart fra hvit
 Z = 3.0                      # avstand til eplene
